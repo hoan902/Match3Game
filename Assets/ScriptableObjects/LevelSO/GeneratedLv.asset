@@ -1,0 +1,431 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db798ac8d268234ab427e0690077ffa, type: 3}
+  m_Name: GeneratedLv
+  m_EditorClassIdentifier: 
+  levelName: Test Level
+  width: 10
+  height: 10
+  availableGemList:
+  - {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  ramdomGenerateGem: {fileID: 11400000, guid: 87a031edb7dd87b4e9b3c243fa5b2921, type: 2}
+  availableCellTypeList:
+  - {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+  - {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+  goalType: 0
+  moveAmount: 11
+  targetScore: 30000
+  levelCellList:
+  - x: 0
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 0
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 0
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 0
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 0
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 0
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 0
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 0
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 0
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 0
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 1
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 1
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 1
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 1
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 1
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 1
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 1
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 1
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 1
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 1
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 2
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 2
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 2
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 2
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 2
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 2
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 2
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 2
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 2
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 2
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 3
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 3
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 3
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 3
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 3
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 3
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 3
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 3
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 3
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 3
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 4
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 4
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 4
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 4
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 4
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 4
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 4
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 4
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 4
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 4
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 5
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 5
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 5
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 5
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 5
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 5
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 5
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 5
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 5
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 5
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 6
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 6
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 6
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 6
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 6
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 6
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 6
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 6
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 6
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 6
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 7
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 7
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 7
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 7
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 7
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 7
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 7
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 7
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 7
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 7
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 8
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 8
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 8
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 8
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 8
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: e859ec17df387f8488eef7dd140854e0, type: 2}
+  - x: 8
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 8
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 8
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: b3c5ff5bd657ba742b6f7c856e453321, type: 2}
+  - x: 8
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 8
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 9
+    y: 0
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 9
+    y: 1
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 9
+    y: 2
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 9
+    y: 3
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 9
+    y: 4
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: d37c9a33bbe4a9d45a68002fd4310ef0, type: 2}
+  - x: 9
+    y: 5
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 88bc65f0e89c263479c9bd3e2fa53dee, type: 2}
+  - x: 9
+    y: 6
+    cellTypeInfo: {fileID: 11400000, guid: 02889bb071ff19d4197f9dc262483419, type: 2}
+    currentContainedGem: {fileID: 11400000, guid: 2775262b5a7045a43b330e846e75004e, type: 2}
+  - x: 9
+    y: 7
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 9
+    y: 8
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
+  - x: 9
+    y: 9
+    cellTypeInfo: {fileID: 11400000, guid: d4c737f637bd6e840b1c8abe6e574344, type: 2}
+    currentContainedGem: {fileID: 0}
