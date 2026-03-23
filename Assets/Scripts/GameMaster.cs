@@ -16,6 +16,7 @@ public class GameMaster : MonoBehaviour
 
     [Header("--- Sound Effects")]
     [SerializeField] private AudioClip m_musicLoops;
+    [SerializeField] private float m_masterSoundVolume = 0.8f;
 
     private int m_baseComboMultiplier = 1;
     private int m_baseScore = 600;
@@ -23,6 +24,7 @@ public class GameMaster : MonoBehaviour
     private int m_currentMoveLeft;
     private int m_currentScore;
     private int m_currentObjectiveScore;
+    private Coroutine m_pendingWinLoseCheck;
 
     void Start()
     {
@@ -56,10 +58,16 @@ public class GameMaster : MonoBehaviour
         m_gameUI.UpdateMoveLeft(m_currentMoveLeft);
         m_gameUI.UpdateScore(m_currentScore);
     }
+
     private void CheckWinLoseCondition()
     {
-        StartCoroutine(IEDelayPopup());
+        // Cancel previous pending check to prevent multiple simultaneous checks
+        if (m_pendingWinLoseCheck != null)
+            StopCoroutine(m_pendingWinLoseCheck);
+        
+        m_pendingWinLoseCheck = StartCoroutine(IEDelayPopup());
     }
+
     private void CleanAll()
     {
         //HoanDN Reset all here
@@ -71,18 +79,14 @@ public class GameMaster : MonoBehaviour
     IEnumerator IEDelayPopup()
     {
         yield return new WaitUntil(()=> m_gameState == GameState.PlayerMove);
-        if (m_currentMoveLeft >= 0 && m_currentScore >= m_currentObjectiveScore)
-        {
-            m_gameState = GameState.GameOver;
-            m_gameUI.OnWinPopup();
-        }
-        if (m_currentMoveLeft == 0)
+        if (m_currentMoveLeft <= 0)
         {
             m_gameState = GameState.GameOver;
             if (m_currentScore >= m_currentObjectiveScore)
                 m_gameUI.OnWinPopup();
             else
                 m_gameUI.OnLosePopup();
+            yield break;
         }
     }
 
@@ -104,10 +108,12 @@ public class GameMaster : MonoBehaviour
         m_gameState = newState;
         m_boardGameplay.UpdateGameplayState(newState);
     }
+
     public GameState GetCurrentGameState()
     {
         return m_gameState;
     }
+
     public void AddScore(int clearedCount)
     {
         int comboMultiplier = m_baseComboMultiplier;
@@ -115,11 +121,17 @@ public class GameMaster : MonoBehaviour
             comboMultiplier += 1;
         else if (clearedCount > 4)
             comboMultiplier += 2;
+        
         int lengthBonus = clearedCount * m_baseScore;
-        int totalScore = lengthBonus * m_baseComboMultiplier;
+        int totalScore = lengthBonus * comboMultiplier; // FIXED: Use comboMultiplier instead of m_baseComboMultiplier
 
         m_currentScore += totalScore;
         m_gameUI.UpdateScore(m_currentScore);
         CheckWinLoseCondition();
+    }
+
+    public float GetMasterSoundVolume()
+    {
+        return m_masterSoundVolume;
     }
 }

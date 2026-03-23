@@ -32,7 +32,7 @@ public class GameUI : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        m_scoreTxt.text = $"Target Score: {score}";
+        m_scoreTxt.text = $"Current Score: {score}";
     }
 
     public void ResetAll()

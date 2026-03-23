@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BoardVisual : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class BoardVisual : MonoBehaviour
     [SerializeField] private AudioClip m_popupBoardSoundEff;
     [SerializeField] private AudioClip m_match3SoundEff;
     [SerializeField] private AudioClip m_selectSoundEff;
+    
+    [Header("--- Sound Settings")]
+    [SerializeField] private float m_spawnSoundVolume = 0.3f;
+    [SerializeField] private float m_matchSoundVolume = 0.6f;
+    [SerializeField] private float m_selectSoundVolume = 0.5f;
 
     private CustomGrid2D<RuntimeVisualCell> m_grid2D;
     private GameMaster m_gameMaster;
@@ -36,7 +42,7 @@ public class BoardVisual : MonoBehaviour
     #region +++++ Private Visual Logic
     private void GeneratingBoardVisual()
     {
-        //Set State to busy to generate board visual and animation
+        //Set "State" to "busy" to generate board visual and animation
         m_gameMaster.SetGameState(GameState.Busy);
 
         //Init data
@@ -92,21 +98,24 @@ public class BoardVisual : MonoBehaviour
                 }
             }
         }
+        
         float timePosPerCell = 1f / backgroundSpriteRenderereList.Count;
         float timePosPerGem = 1f / gemSpriteRenderereList.Count;
         float speedTime = 1.25f;
-        SpawningAnimation(backgroundSpriteRenderereList, timePosPerCell / speedTime);
-        SpawningAnimation(gemSpriteRenderereList, timePosPerGem / speedTime);
+        SpawningAnimation(backgroundSpriteRenderereList, timePosPerCell / speedTime, isSilent: true);
+        SpawningAnimation(gemSpriteRenderereList, timePosPerGem / speedTime, isSilent: false);
         m_startAnimationSequence.Play().OnComplete(() =>
         {
-            //OnComplete generate visual -> update game state
             m_gameMaster.SetGameState(GameState.PlayerMove);
         });
     }
-    private void SpawningAnimation(List<SpriteRenderer> spriteRenderList, float animSpeedRate)
+
+    private void SpawningAnimation(List<SpriteRenderer> spriteRenderList, float animSpeedRate, bool isSilent = false)
     {
         float i = 0;
         int index = 0;
+        int soundInterval = 4; // Play sound every 4 gems instead of every 3
+        
         foreach (var spriteRender in spriteRenderList)
         {
             i += animSpeedRate;
@@ -116,17 +125,21 @@ public class BoardVisual : MonoBehaviour
             m_startAnimationSequence.Join(spriteRender.transform.DOScale(1f, 0.3f).OnComplete(() =>
             {
                 index++;
-                if (index % 3 == 0 && index < 80)
+                // Play sound less frequently and at lower volume to prevent overlap
+                if (!isSilent && index % soundInterval == 0 && index < 80)
                 {
-                    SoundManager.PlaySound(m_popupBoardSoundEff, false, volume: 0.5f);
+                    SoundManager.PlaySound(m_popupBoardSoundEff, false, volume: m_spawnSoundVolume);
                 }
             }));
         }
     }
+
     private void HidingAnimation(List<SpriteRenderer> spriteRenderList, float animSpeedRate)
     {
         float i = 0;
         int index = 0;
+        int soundInterval = 4;
+        
         foreach (var spriteRender in spriteRenderList)
         {
             if (spriteRender == null)
@@ -138,13 +151,14 @@ public class BoardVisual : MonoBehaviour
             m_startAnimationSequence.Join(spriteRender.transform.DOScale(0, 0.3f).OnComplete(() =>
             {
                 index++;
-                if (index % 3 == 0 && index < 80)
+                if (index % soundInterval == 0 && index < 80)
                 {
-                    SoundManager.PlaySound(m_popupBoardSoundEff, false, volume: 0.5f);
+                    SoundManager.PlaySound(m_popupBoardSoundEff, false, volume: m_spawnSoundVolume);
                 }
             }));
         }
     }
+
     private bool IsValidLengthOfGrid(CellData cellData)
     {
         if (cellData.x >= m_grid2D.GetWidth() || cellData.y >= m_grid2D.GetHeight())
@@ -198,7 +212,7 @@ public class BoardVisual : MonoBehaviour
                 gemA.name = gemBName;
 
                 cellB.gemSpriteRenderer = spriteRenderGemA;
-                gemA.name = gemAName;
+                gemB.name = gemAName;
             });
         swapAnimationSequence.Play();
         yield return swapAnimationSequence.WaitForCompletion();
@@ -217,16 +231,16 @@ public class BoardVisual : MonoBehaviour
             Transform gemTranformParent = cell.gemSpriteRenderer.transform.parent;
             clearAnimationSequence.Join(cell.gemSpriteRenderer.transform.DOScale(0f, 0.3f).OnComplete(() =>
             {
-                //Enable particle for destroy effect
                 GameObject particle = gemTranformParent.GetChild(0).gameObject;
                 particle.transform.SetParent(gemTranformParent.transform.parent, true);
                 particle.SetActive(true);
+                
+                // Play sound only once per clear animation
                 if (!isExplodePlayed)
                 {
-                    SoundManager.PlaySound(m_match3SoundEff, false);
+                    SoundManager.PlaySound(m_match3SoundEff, false, volume: m_matchSoundVolume);
                     isExplodePlayed = true;
                 }
-                
             }).SetAutoKill());
         }
 
@@ -322,6 +336,7 @@ public class BoardVisual : MonoBehaviour
                     gemSpriteRenderereList.Add(visualCell.gemSpriteRenderer);
             }
         }
+        
         m_startAnimationSequence = DOTween.Sequence();
         float timePosPerCell = 1f / gemSpriteRenderereList.Count;
         float speedTime = 1.25f;
@@ -340,8 +355,9 @@ public class BoardVisual : MonoBehaviour
                     visualCell.gemSpriteRenderer.sprite = cell.currentContainedGem.sprite;
             }
         }
+        
         m_startAnimationSequence = DOTween.Sequence();
-        SpawningAnimation(gemSpriteRenderereList, timePosPerCell / speedTime);
+        SpawningAnimation(gemSpriteRenderereList, timePosPerCell / speedTime, isSilent: false);
         m_startAnimationSequence.Play();
         yield return m_startAnimationSequence.WaitForCompletion();
     }
@@ -369,13 +385,12 @@ public class BoardVisual : MonoBehaviour
             Destroy(m_cellContainer.gameObject);
         });
         yield return m_startAnimationSequence.WaitForCompletion();
-        //This should be happen when the game is over and preparing to restart the board -> set state from gameOver to Busy for regenerating board
         m_gameMaster.SetGameState(GameState.Busy);
     }
-    //--
+
     public void SelectVisualCell(int x, int y)
     {
-        SoundManager.PlaySound(m_selectSoundEff, false);
+        SoundManager.PlaySound(m_selectSoundEff, false, volume: m_selectSoundVolume);
         var selectedCell = m_visualCellArr[x, y];
         if (selectedCell != null && selectedCell.gemSpriteRenderer != null)
         {
