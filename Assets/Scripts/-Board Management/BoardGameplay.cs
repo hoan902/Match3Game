@@ -342,6 +342,7 @@ public class BoardGameplay : MonoBehaviour
         foreach (var cellData in cellDataList)
             cellData.currentContainedGem = null;
     }
+    //Note TODO: This should be just for match 3 list, seperate with the match 4, match T and match 5 for the special gem
     List<CellData> GetListOfMatchesAt(int x, int y)
     {
         List<CellData> list = new List<CellData>();

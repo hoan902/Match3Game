@@ -47,6 +47,14 @@ public enum GemType
     Circle,
     RandomGenerate
 }
+public enum GemSpecialType
+{
+    None,
+    BombSquare,
+    BombVertical,
+    BombHorizontal,
+    BombClearSameGem
+}
 public enum CellType
 {
     Normal,
